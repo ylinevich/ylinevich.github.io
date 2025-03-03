@@ -31,9 +31,16 @@ for(i=0;i<7;i++)o[l[i]]=o(l[i]);w[n]=o}
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-BY7KPSC4FC');
 </script>
-  
+    
+  <script>
+  FundraiseUp.on('checkout:open', function() {
+    dataLayer.push({
+      'event': 'checkout_opened'
+    });
+  });
+</script>
+
 </body>
 </html>
