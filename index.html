@@ -16,33 +16,29 @@ for(i=0;i<7;i++)o[l[i]]=o(l[i]);w[n]=o}
 <!-- End Fundraise Up -->
 </head>
 <body>
-
     <header>
         <h1>Helping Hand DEMO</h1>
     </header>
-<a href="#XJKDHSTQ" style="display: none"></a>
-<script>
-  FundraiseUp.on('checkout:open', function() {
-    gtag('event', 'checkout_opened', {
-      'event_category': 'Fundraising',
-      'event_label': 'Checkout Opened'
-    });
-  });
-</script>
-    <footer id="footer">
+    <a href="#XJKDHSTQ" style="display: none"></a>
+    <script>
+      FundraiseUp.on('checkout:open', function() {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'checkout_opened',
+          'event_category': 'Fundraising',
+          'event_label': 'Checkout Opened'
+        });
+      });
+    </script>
 
-    </footer>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BY7KPSC4FC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BY7KPSC4FC');
-</script>
     
-
-
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BY7KPSC4FC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BY7KPSC4FC');
+    </script>
 </body>
 </html>
