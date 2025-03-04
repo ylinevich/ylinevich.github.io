@@ -34,13 +34,15 @@ for(i=0;i<7;i++)o[l[i]]=o(l[i]);w[n]=o}
   gtag('config', 'G-BY7KPSC4FC');
 </script>
     
-  <script>
+<script>
   FundraiseUp.on('checkout:open', function() {
-    dataLayer.push({
-      'event': 'checkout_opened'
+    gtag('event', 'checkout_opened', {
+      'event_category': 'Fundraising',
+      'event_label': 'Checkout Opened'
     });
   });
 </script>
+
 
 </body>
 </html>
