@@ -21,16 +21,30 @@ for(i=0;i<7;i++)o[l[i]]=o(l[i]);w[n]=o}
     </header>
     <a href="#XJKDHSTQ" style="display: none"></a>
     <script>
-      FundraiseUp.on('checkout:open', function() {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          'event': 'checkout_opened',
-          'event_category': 'Fundraising',
-          'event_label': 'Checkout Opened'
-        });
+      function sendCheckoutOpenedEvent() {
+        if (typeof gtag === "function") {
+          gtag('event', 'checkout_opened', {
+            'event_category': 'Fundraising',
+            'event_label': 'Checkout Opened'
+          });
+        } else {
+          console.error("gtag is not available yet.");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        if (window.FundraiseUp) {
+          FundraiseUp.on('checkout:open', sendCheckoutOpenedEvent);
+        } else {
+          console.error("FundraiseUp is not loaded yet.");
+        }
       });
     </script>
 
+
+<script>
+window.fundraiseup_livemode = false;
+</script>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BY7KPSC4FC"></script>
