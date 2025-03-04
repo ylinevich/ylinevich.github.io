@@ -21,7 +21,14 @@ for(i=0;i<7;i++)o[l[i]]=o(l[i]);w[n]=o}
         <h1>Helping Hand DEMO</h1>
     </header>
 <a href="#XJKDHSTQ" style="display: none"></a>
-
+<script>
+  FundraiseUp.on('checkout:open', function() {
+    gtag('event', 'checkout_opened', {
+      'event_category': 'Fundraising',
+      'event_label': 'Checkout Opened'
+    });
+  });
+</script>
     <footer id="footer">
 
     </footer>
@@ -34,14 +41,7 @@ for(i=0;i<7;i++)o[l[i]]=o(l[i]);w[n]=o}
   gtag('config', 'G-BY7KPSC4FC');
 </script>
     
-<script>
-  FundraiseUp.on('checkout:open', function() {
-    gtag('event', 'checkout_opened', {
-      'event_category': 'Fundraising',
-      'event_label': 'Checkout Opened'
-    });
-  });
-</script>
+
 
 
 </body>
